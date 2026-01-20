@@ -1,0 +1,570 @@
+:root{
+    --change-f: -webkit-linear-gradient(left, rgb(8, 185, 185), rgb(146, 71, 146), rgb(229, 105, 101));
+    --change-s: -webkit-linear-gradient(left, rgb(146, 71, 146), rgb(229, 105, 101), rgb(8, 185, 185));
+    --change-y: -webkit-linear-gradient(left, rgb(229, 105, 101), rgb(8, 185, 185), rgb(146, 71, 146));
+}
+
+.content{
+    width: 100%;
+    height: auto;
+    min-height: calc(100vh - 122px);
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+
+.mid{
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+    overflow-x: hidden;
+}
+
+.forcast7{
+    color: aliceblue;
+    margin-top: 30px;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.search{
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.search > label{
+    color: aliceblue;
+    padding: 5px;
+    font-size: 20px;
+}
+
+.searchInput{
+    padding-block: 6px;
+    padding-inline: 12px;
+    width: 600px;
+    font-size: 16px;
+    outline: none;
+    border-radius: 10px;
+    border-color: transparent;
+    color:rgb(79, 79, 79);
+}
+
+
+.outerSearch{
+    padding: 4px;
+    border-radius: 10px;
+}
+
+.outerSearch:has(.searchInput:focus){
+    background: linear-gradient(
+        90deg, 
+        rgb(8, 185, 185), 
+        rgb(146, 71, 146), 
+        rgb(229, 105, 101), 
+        rgb(8, 185, 185)
+    );
+    background-size: 300% 100%;
+    animation: rainbow 3s infinite linear;
+}
+
+@keyframes rainbow {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+
+.options{
+    position: absolute;
+    top: 110px;
+    left: 50%;
+    transform: translate(-50%);
+
+    width: 100%;
+    color: aliceblue;
+    border-radius: 10px;
+    background-color: rgb(85, 85, 85);
+    max-height: 70vh;
+    overflow-y: auto;
+    z-index: 100;
+}
+
+.option{
+    cursor: pointer;
+    padding: 12px;
+    display: flex;
+    border-bottom: 1px solid grey;
+}
+
+.option:hover{
+    background-color: rgba(65, 105, 225, 0.397);
+    outline: 1px solid royalblue;
+    border-bottom: 1px solid transparent;
+
+
+}
+
+.option:last-of-type{
+    border-bottom:none
+}
+
+.flag{
+    transition: 1s all;
+}
+
+.country{
+    font-size: 30px;
+}
+
+
+.info{
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+}
+
+.city{
+    flex-grow: 1;
+    font-weight: bold;
+    font-size: 18px;
+    padding-inline: 10px;
+
+}
+
+.detail1{
+    padding-inline: 5px;
+    background: -webkit-linear-gradient(left, rgb(14, 255, 255),rgb(234, 121, 234)),rgb(251, 138, 134);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: bold;
+}
+
+
+.searchFields{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.dropdown{
+    margin-left: 10px;
+}
+
+.placeData{
+    display: flex;
+    margin-top: 20px;
+}
+
+.box{
+    background: -webkit-linear-gradient(left, rgba(14, 255, 255,0.4),rgba(234, 121, 234, 0.4)),rgba(251, 138, 134, 0.4);
+    border-radius: 25px;
+
+}
+
+
+.cityInfo{
+    margin-top: 20px;
+    background-color: rgb(63, 63, 63);
+    padding: 25px;
+    border-radius: 25px;
+    color: aliceblue;
+    font-weight: bold;
+    font-size: 30px;
+    width: 500px;
+    overflow-wrap: normal;
+}
+
+.buttons{
+    height: 48%;
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+    margin-top: 140px;
+}
+
+
+table{
+    height: 30px;
+    font-size: 20px;
+    font-weight: normal;
+
+}
+
+td:last-child{
+    float: right;
+}
+
+td{
+    padding-block: 3px;
+}
+
+.weatherIcon{
+    text-align: center;
+    font-size: 70px;
+}
+
+.stats{
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+@media (max-width: 1440px) {
+    .mid {
+        width: 65%;
+    }
+
+    .searchInput {
+        width: 500px;
+    }
+
+    .cityInfo {
+        max-width: 500px;
+        font-size: 26px;
+        padding: 20px;
+    }
+
+    .weatherIcon {
+        font-size: 60px;
+    }
+
+    table {
+        font-size: 18px;
+    }
+}
+
+@media (max-width: 1200px) {
+    .mid {
+        width: 60%;
+    }
+
+    .searchInput {
+        width: 400px;
+    }
+
+    .cityInfo {
+        max-width: 500px;
+        font-size: 24px;
+        padding: 18px;
+    }
+
+    .weatherIcon {
+        font-size: 50px;
+    }
+
+    table {
+        font-size: 16px;
+    }
+
+    .forcast7 {
+        font-size: 20px;
+        margin-top: 20px;
+    }
+}
+
+@media (max-width: 1024px) {
+    .content {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .mid {
+        width: 90%;
+        padding: 10px 5px;
+    }
+
+
+    .searchInput {
+        width: 100%;
+        max-width: 400px;
+        font-size: 14px;
+        padding-block: 5px;
+        padding-inline: 10px;
+    }
+
+    .cityInfo {
+        max-width: 60%;
+        width: 60%;
+        font-size: 22px;
+        padding: 15px;
+    }
+
+    .weatherIcon {
+        font-size: 45px;
+    }
+
+    table {
+        font-size: 14px;
+    }
+
+    .forcast7 {
+        font-size: 18px;
+        margin-top: 15px;
+    }
+
+    .buttons {
+        height: auto;
+        margin-top: 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    .content {
+        flex-direction: column;
+        min-height: auto;
+    }
+
+    .mid {
+        width: 95%;
+        padding: 8px;
+    }
+
+
+    .search {
+        margin-top: 15px;
+    }
+
+    .search > label {
+        font-size: 16px;
+        padding: 3px;
+    }
+
+    .searchInput {
+        width: 100%;
+        font-size: 13px;
+        padding-block: 4px;
+        padding-inline: 8px;
+    }
+
+    .outerSearch {
+        padding: 3px;
+    }
+
+    .cityInfo {
+        max-width: 60%;
+        width: 60%;
+        font-size: 18px;
+        padding: 12px;
+        margin-top: 15px;
+    }
+
+    .weatherIcon {
+        font-size: 40px;
+    }
+
+    table {
+        font-size: 12px;
+    }
+
+    td {
+        padding-block: 2px;
+    }
+
+    .forcast7 {
+        font-size: 16px;
+        margin-top: 12px;
+    }
+
+    .options {
+        top: 80px;
+        max-height: 50vh;
+    }
+
+    .option {
+        padding: 10px;
+        font-size: 14px;
+    }
+
+    .country {
+        font-size: 24px;
+    }
+}
+
+@media (max-width: 600px) {
+    .mid {
+        width: 98%;
+        padding: 5px;
+    }
+
+    .search {
+        margin-top: 10px;
+        width: 100%;
+    }
+
+    .search > label {
+        font-size: 14px;
+        margin-bottom: 6px;
+    }
+
+    .searchInput {
+        width: 100%;
+        max-width: 100%;
+        font-size: 12px;
+        padding-block: 3px;
+        padding-inline: 6px;
+    }
+
+    .outerSearch {
+        width: 100%;
+        padding: 2px;
+    }
+
+    .cityInfo {
+        font-size: 16px;
+        padding: 10px;
+        margin-top: 10px;
+        width: 60%;
+        max-width: 60%;
+    }
+
+    .name {
+        font-size: 16px;
+        margin: 3px 0;
+    }
+
+    .weatherIcon {
+        font-size: 35px;
+        margin: 5px 0;
+    }
+
+    .stats {
+        gap: 8px;
+        margin-top: 10px;
+    }
+
+    table {
+        font-size: 11px;
+        width: 100%;
+    }
+
+    td {
+        padding-block: 2px;
+        padding-inline: 5px;
+    }
+
+    .country {
+        font-size: 20px;
+    }
+
+    .forcast7 {
+        font-size: 14px;
+        margin-top: 10px;
+    }
+
+    .options {
+        top: 70px;
+        max-height: 40vh;
+        font-size: 12px;
+        width: 95%;
+    }
+
+    .option {
+        padding: 8px;
+    }
+
+    .city {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 480px) {
+    .mid {
+        width: 99%;
+        padding: 3px;
+    }
+
+    .search {
+        margin-top: 8px;
+        width: 100%;
+    }
+
+    .search > label {
+        font-size: 12px;
+        margin-bottom: 5px;
+    }
+
+    .searchInput {
+        width: 100%;
+        max-width: 100%;
+        font-size: 11px;
+        padding-block: 3px;
+        padding-inline: 6px;
+    }
+
+    .outerSearch {
+        width: 100%;
+        padding: 2px;
+    }
+
+    .cityInfo {
+        font-size: 14px;
+        padding: 8px;
+        margin-top: 8px;
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .name {
+        font-size: 14px;
+        margin: 2px 0;
+    }
+
+    .weatherIcon {
+        font-size: 30px;
+        margin: 3px 0;
+    }
+
+    .stats {
+        gap: 5px;
+        margin-top: 8px;
+    }
+
+    table {
+        font-size: 10px;
+        width: 100%;
+    }
+
+    td {
+        padding-block: 1px;
+        padding-inline: 4px;
+    }
+
+    .country {
+        font-size: 18px;
+    }
+
+    .forcast7 {
+        font-size: 12px;
+        margin-top: 8px;
+    }
+
+    .options {
+        top: 60px;
+        max-height: 30vh;
+        font-size: 11px;
+        width: 98%;
+    }
+
+    .option {
+        padding: 6px;
+        font-size: 12px;
+    }
+
+    .city {
+        font-size: 12px;
+    }
+}

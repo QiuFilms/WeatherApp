@@ -1,0 +1,28 @@
+.header{
+    padding-block: 20px;
+    color: aliceblue;
+    font-size: 22px;
+    display: flex;
+    align-items: center;
+    border-image: -webkit-linear-gradient(left, rgb(8, 185, 185), rgb(146, 71, 146), rgb(229, 105, 101)) 1;
+    border-bottom: 2px solid;
+}
+
+.header .name{
+    font-size: 30px;
+    margin-left: 20px;
+    background: -webkit-linear-gradient(left, rgb(8, 185, 185), rgb(146, 71, 146), rgb(229, 105, 101));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.header img{
+    margin-left: 20px;
+    width: 50px;
+}
+
+.footer{
+    background: -webkit-linear-gradient(left, rgb(8, 185, 185), rgb(146, 71, 146), rgb(229, 105, 101));
+    margin-top: 20px;
+    height: 10px;
+}
